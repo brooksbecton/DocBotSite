@@ -1,0 +1,23 @@
+{
+  "extends": ["prettier"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true,
+      "modules": true
+    }
+  },
+  "rules": {
+    "max-len": ["warn", 120],
+    "indent": ["warn", 2],
+    "prettier/prettier": "error",
+    "react/jsx-indent": ["warn", 2]
+  },
+  "globals": {
+    "localStorage": true
+  },
+  "parser": "babel-eslint",
+  "indent": 2,
+  "plugins": ["prettier"],
+  "linebreak-style": ["error", "windows"]
+}
