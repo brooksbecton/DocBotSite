@@ -8,15 +8,16 @@ export default class SubmitProverb extends React.Component {
     this.submitProverb = this.submitProverb.bind(this);
   }
 
-  submitProverb() {
+  submitProverb(values) {
     console.log("Submit Proverb");
+    console.log(values);
   }
 
   render() {
     return (
       <div>
         {" "}<h1>Submit a Proverb</h1>
-        <ProverbForm handeSubmit={() => this.submitProverb} />
+        <ProverbForm onSubmit={this.submitProverb} />
       </div>
     );
   }

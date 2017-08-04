@@ -6,8 +6,8 @@ let ProverbForm = props => {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="proverbTex">Proverb</label>
-        <Field name="proverbTex" component="input" type="text" />
+        <label htmlFor="proverbText">Proverb</label>
+        <Field name="proverbText" component="input" type="text" />
       </div>{" "}
       <button type="submit">Submit</button>
     </form>
