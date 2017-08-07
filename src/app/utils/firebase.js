@@ -173,7 +173,21 @@ const FireBaseTools = {
    * @param path {!string|string}
    * @returns {!firebase.database.Reference|firebase.database.Reference}
    */
-  getDatabaseReference: path => firebaseDb.ref(path)
+  getDatabaseReference: path => firebaseDb.ref(path),
+
+  /**
+   * Write data to the database
+   * @param path {string}
+   * @param data {any}
+   */
+  putDbDate: (path, data) => firebaseDb.ref(path).set(data),
+
+  /**
+   * Pushes data to the database in array form
+   * @param path {string}
+   * @param data {any}
+   */
+  pushDbDate: (path, data) => firebaseDb.ref(path).push(data)
 };
 
 export default FireBaseTools;
