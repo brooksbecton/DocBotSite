@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { fetchUser, logoutUser } from "../actions/firebase_actions";
+import { getLatestProverb } from "../actions/proverbs.js";
 
 class App extends Component {
   constructor(props) {
@@ -10,6 +11,10 @@ class App extends Component {
 
     this.props.fetchUser();
     this.logOut = this.logOut.bind(this);
+  }
+
+  componentWillMount() {
+    this.props.getLatestProverb();
   }
 
   logOut() {
@@ -113,7 +118,10 @@ class App extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchUser, logoutUser }, dispatch);
+  return bindActionCreators(
+    { getLatestProverb, fetchUser, logoutUser },
+    dispatch
+  );
 }
 
 function mapStateToProps(state) {

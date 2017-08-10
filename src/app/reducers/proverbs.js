@@ -1,11 +1,14 @@
-import {
-  SAVE_PROVERB,
-  SAVE_PROVERB_FAIL,
-  SAVE_PROVERB_SUCCESS
-} from "./../constants/proverbs";
+import { GET_LATEST_PROVERB_SUCCESS } from "./../constants/proverbs";
 
-export default function ProverbReducer(state = {}, action) {
+const initialState = {
+  currentProverbs: [],
+  promise: {}
+};
+
+export default function ProverbReducer(state = initialState, action) {
   switch (action.type) {
+    case GET_LATEST_PROVERB_SUCCESS:
+      return { ...state, currentProverbs: action.proverbs };
     default:
       return state;
   }
