@@ -24,10 +24,6 @@ export const saveProverbSuccess = () => {
 };
 
 export const getLatestProverb = () => {
-  const request = FirebaseTools.getDatabaseReference("doc/proverbs/")
-    .limitToFirst(10)
-    .once("value");
-
   return {
     type: GET_LATEST_PROVERB
   };
