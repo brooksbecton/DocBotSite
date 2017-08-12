@@ -1,6 +1,6 @@
 import { call, put, takeEvery } from "redux-saga/effects";
-import { getLatestProverbSuccess } from "./../actions/proverbs";
-import { GET_LATEST_PROVERB } from "./../constants/proverbs";
+import { getProverbsSuccess } from "./../actions/proverbs";
+import { GET_PROVERBS } from "./../constants/proverbs";
 import FirebaseTools from "./../utils/firebase";
 
 export function getLastProverbs(proverbAmount = 10) {
@@ -9,12 +9,12 @@ export function getLastProverbs(proverbAmount = 10) {
     .once("value");
 }
 
-export function* getLatestProverb() {
-  const snapshot = yield call(getLastProverbs, 10);
+export function* getProverbs({ amount }) {
+  const snapshot = yield call(getLastProverbs, amount);
   const proverbs = snapshot.val();
-  yield put(getLatestProverbSuccess(proverbs));
+  yield put(getProverbsSuccess(proverbs));
 }
 
-export function* getLatestProverbWatcher() {
-  yield takeEvery(GET_LATEST_PROVERB, getLatestProverb);
+export function* getProverbsWatcher() {
+  yield takeEvery(GET_PROVERBS, getProverbs);
 }

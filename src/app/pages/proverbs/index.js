@@ -1,39 +1,34 @@
 import React, { Component } from "react";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
+import { getProverbs } from "./../../actions/proverbs";
+
 class ProverbsList extends Component {
+  constructor() {
+    super();
+  }
+
+  componentWillMount() {
+    console.log(this.props.currentProverbs);
+    this.props.getProverbs(10);
+  }
+
   render() {
     return (
       <div>
         <h1>Proverbs List</h1>
         <ul>
-          <li>Anger and prepare for the worst.</li>
-          <ul>
-            <li>
-              <strong>Date</strong>: 08/17/2017
-            </li>
-            <li>
-              <strong>Proverb</strong>: "Hope for the best and prepare for the
-              worst."
-            </li>
-            <li>
-              <strong>Pivot</strong>: and
-            </li>
-            <li>
-              <strong>Matching Proverb</strong>: Anger and hate hinder good
-              counsel.
-            </li>
-          </ul>
-          <li>Blahblah blah blah blah blah</li>
-          <li>Blahblah blah blah blah blah</li>
-          <li>Blahblah blah blah blah blah</li>
-          <li>Blahblah blah blah blah blah</li>
-          <li>Blahblah blah blah blah blah</li>
-          <li>Blahblah blah blah blah blah</li>
-          <li>Blahblah blah blah blah blah</li>
-          <li>Blahblah blah blah blah blah</li>
-          <li>Blahblah blah blah blah blah</li>
-          <li>Blahblah blah blah blah blah</li>
+          {this.props.currentProverbs &&
+            Object.keys(this.props.currentProverbs).map(key => {
+              const proverb = this.props.currentProverbs[key];
+              return (
+                <li key={key}>
+                  {proverb.combinedProverb}
+                </li>
+              );
+            })}
         </ul>
       </div>
     );
@@ -42,4 +37,13 @@ class ProverbsList extends Component {
 
 ProverbsList.propTypes = {};
 
-export default ProverbsList;
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ getProverbs }, dispatch);
+}
+
+function mapStateToProps({ proverbs }) {
+  console.log(proverbs);
+  return { currentProverbs: proverbs.currentProverbs };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProverbsList);

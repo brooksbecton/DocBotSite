@@ -1,13 +1,12 @@
-import { GET_LATEST_PROVERB_SUCCESS } from "./../constants/proverbs";
+import { GET_PROVERBS_SUCCESS } from "./../constants/proverbs";
 
 const initialState = {
-  currentProverbs: [],
-  promise: {}
+  currentProverbs: []
 };
 
 export default function ProverbReducer(state = initialState, action) {
   switch (action.type) {
-    case GET_LATEST_PROVERB_SUCCESS:
+    case GET_PROVERBS_SUCCESS:
       return { ...state, currentProverbs: action.proverbs };
     default:
       return state;

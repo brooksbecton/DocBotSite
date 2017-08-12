@@ -2,9 +2,9 @@ import firebase from "firebase";
 import FirebaseTools from "./../utils/firebase";
 
 import {
-  GET_LATEST_PROVERB,
-  GET_LATEST_PROVERB_FAIL,
-  GET_LATEST_PROVERB_SUCCESS,
+  GET_PROVERBS,
+  GET_PROVERBS_FAIL,
+  GET_PROVERBS_SUCCESS,
   SAVE_PROVERB,
   SAVE_PROVERB_FAIL,
   SAVE_PROVERB_SUCCESS
@@ -23,14 +23,15 @@ export const saveProverbSuccess = () => {
   return { type: SAVE_PROVERB_SUCCESS };
 };
 
-export const getLatestProverb = () => {
+export const getProverbs = amount => {
   return {
-    type: GET_LATEST_PROVERB
+    type: GET_PROVERBS,
+    amount
   };
 };
-export const getLatestProverbFail = () => {
-  return { type: GET_LATEST_PROVERB_FAIL };
+export const getProverbsFail = () => {
+  return { type: GET_PROVERBS_FAIL };
 };
-export const getLatestProverbSuccess = proverbs => {
-  return { type: GET_LATEST_PROVERB_SUCCESS, proverbs };
+export const getProverbsSuccess = proverbs => {
+  return { type: GET_PROVERBS_SUCCESS, proverbs };
 };
