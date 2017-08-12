@@ -98,6 +98,9 @@ class App extends Component {
                   <Link to="/"> Home</Link>
                 </li>
                 <li>
+                  <Link to="/proverbs/">Proverbs</Link>
+                </li>
+                <li>
                   <Link to="/proverbs/submit/"> Submit</Link>
                 </li>
                 ,

@@ -3,6 +3,7 @@ import { Route, IndexRoute } from "react-router";
 import App from "./components/app";
 
 import SubmitProverb from "./pages/proverbs/submit/";
+import ProverbsList from "./pages/proverbs/";
 import HomeIndex from "./components/index_home";
 import UserLogin from "./components/user/login";
 import UserLogout from "./components/user/logout";
@@ -18,6 +19,7 @@ export default (
     <Route path="/logout" component={UserLogout} />
     <Route path="/register" component={UserRegister} />
     <Route path="/reset" component={ResetPassword} />
+    <Route path="/proverbs/" component={ProverbsList} />
     <Route
       path="/proverbs/submit"
       component={SubmitProverb}
