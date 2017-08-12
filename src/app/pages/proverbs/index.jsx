@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import PropTypes from "prop-types";
 
 import { getProverbs } from "./../../actions/proverbs";
 
