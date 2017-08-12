@@ -24,6 +24,7 @@ export class SubmitProverb extends React.Component {
     return (
       <div>
         <h1>Submit a Proverb</h1>
+        <p>Add to the repository of proverbs that Doc pulls from.</p>
         {this.state.proverbSubmitted
           ? <p>
               <em>Proverb Submitted!</em>

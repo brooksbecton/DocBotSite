@@ -1,12 +1,12 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
-
+import Label from "./../Label";
 let ProverbForm = props => {
   const { handleSubmit } = props;
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="proverbText">Proverb</label>
+        <Label htmlFor="proverbText">Proverb</Label>
         <Field name="proverbText" component="input" type="text" />
       </div>{" "}
       <button type="submit">Submit</button>
