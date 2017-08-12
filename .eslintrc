@@ -1,5 +1,5 @@
 {
-  "extends": ["prettier"],
+  "extends": ["airbnb", "prettier"],
   "parserOptions": {
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
@@ -9,9 +9,8 @@
   },
   "rules": {
     "max-len": ["warn", 120],
-    "indent": ["warn", 2],
     "prettier/prettier": "error",
-    "react/jsx-indent": ["warn", 2]
+    "import/no-mutable-exports": "warn"
   },
   "globals": {
     "localStorage": true

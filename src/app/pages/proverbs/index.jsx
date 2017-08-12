@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, PropTypes } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
@@ -12,14 +12,14 @@ class ProverbsList extends Component {
 
   componentWillMount() {
     console.log(this.props.currentProverbs);
-    this.props.getProverbs(10);
+    this.props.getProverbs(100);
   }
 
   render() {
     return (
       <div>
         <h1>Proverbs List</h1>
-        <ul>
+        <ol>
           {this.props.currentProverbs &&
             Object.keys(this.props.currentProverbs).map(key => {
               const proverb = this.props.currentProverbs[key];
@@ -29,13 +29,15 @@ class ProverbsList extends Component {
                 </li>
               );
             })}
-        </ul>
+        </ol>
       </div>
     );
   }
 }
 
-ProverbsList.propTypes = {};
+ProverbsList.propTypes = {
+  currentProverbs: PropTypes.array.isRequired
+};
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ getProverbs }, dispatch);

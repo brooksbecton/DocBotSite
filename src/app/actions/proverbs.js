@@ -1,4 +1,3 @@
-import firebase from "firebase";
 import FirebaseTools from "./../utils/firebase";
 
 import {
@@ -16,22 +15,15 @@ export const saveProverb = proverbText => {
   });
   return { type: SAVE_PROVERB, request };
 };
-export const saveProverbFail = () => {
-  return { type: SAVE_PROVERB_FAIL };
-};
-export const saveProverbSuccess = () => {
-  return { type: SAVE_PROVERB_SUCCESS };
-};
+export const saveProverbFail = () => ({ type: SAVE_PROVERB_FAIL });
+export const saveProverbSuccess = () => ({ type: SAVE_PROVERB_SUCCESS });
 
-export const getProverbs = amount => {
-  return {
-    type: GET_PROVERBS,
-    amount
-  };
-};
-export const getProverbsFail = () => {
-  return { type: GET_PROVERBS_FAIL };
-};
-export const getProverbsSuccess = proverbs => {
-  return { type: GET_PROVERBS_SUCCESS, proverbs };
-};
+export const getProverbs = amount => ({
+  type: GET_PROVERBS,
+  amount
+});
+export const getProverbsFail = () => ({ type: GET_PROVERBS_FAIL });
+export const getProverbsSuccess = proverbs => ({
+  type: GET_PROVERBS_SUCCESS,
+  proverbs
+});
