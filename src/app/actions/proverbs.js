@@ -1,6 +1,9 @@
 import FirebaseTools from "./../utils/firebase";
 
 import {
+  GET_PROVERB_BY_ID,
+  GET_PROVERB_BY_ID_FAIL,
+  GET_PROVERB_BY_ID_SUCCESS,
   GET_PROVERBS,
   GET_PROVERBS_FAIL,
   GET_PROVERBS_SUCCESS,
@@ -17,6 +20,16 @@ export const saveProverb = proverbText => {
 };
 export const saveProverbFail = () => ({ type: SAVE_PROVERB_FAIL });
 export const saveProverbSuccess = () => ({ type: SAVE_PROVERB_SUCCESS });
+
+export const getProverbById = id => ({
+  type: GET_PROVERB_BY_ID,
+  id
+});
+export const getProverbByIdFail = () => ({ type: GET_PROVERB_BY_ID_FAIL });
+export const getProverbByIdSuccess = proverb => ({
+  type: GET_PROVERB_BY_ID_SUCCESS,
+  proverb
+});
 
 export const getProverbs = amount => ({
   type: GET_PROVERBS,

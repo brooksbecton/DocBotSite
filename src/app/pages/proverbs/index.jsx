@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
+import { Link } from "react-router";
 
 import { getProverbs } from "./../../actions/proverbs";
 
@@ -10,7 +11,6 @@ class ProverbsList extends Component {
   }
 
   componentWillMount() {
-    console.log(this.props.currentProverbs);
     this.props.getProverbs(100);
   }
 
@@ -24,7 +24,9 @@ class ProverbsList extends Component {
               const proverb = this.props.currentProverbs[key];
               return (
                 <li key={key}>
-                  {proverb.combinedProverb}
+                  <Link to={`proverbs/details/${key}`}>
+                    {proverb.combinedProverb}
+                  </Link>
                 </li>
               );
             })}
@@ -35,7 +37,7 @@ class ProverbsList extends Component {
 }
 
 ProverbsList.propTypes = {
-  currentProverbs: PropTypes.array.isRequired
+  currentProverbs: PropTypes.object.isRequired
 };
 
 function mapDispatchToProps(dispatch) {
@@ -43,7 +45,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 function mapStateToProps({ proverbs }) {
-  console.log(proverbs);
   return { currentProverbs: proverbs.currentProverbs };
 }
 

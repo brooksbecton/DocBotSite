@@ -12,7 +12,7 @@ import routes from "./routes";
 import "bootstrap-social";
 import "./bundle.scss";
 
-import { getProverbsWatcher } from "./sagas/proverbs";
+import { getProverbsWatcher, getProverbByIdWatcher } from "./sagas/proverbs";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -29,6 +29,7 @@ const composeEnhancers =
 
 const store = createStore(reducers, composeEnhancers(...enhancers));
 
+sagaMiddleware.run(getProverbByIdWatcher);
 sagaMiddleware.run(getProverbsWatcher);
 
 ReactDOM.render(
