@@ -17,20 +17,25 @@ class ProverbsList extends Component {
   render() {
     return (
       <div>
-        <h1>Proverbs List</h1>
-        <ol>
-          {this.props.currentProverbs &&
-            Object.keys(this.props.currentProverbs).map(key => {
-              const proverb = this.props.currentProverbs[key];
-              return (
-                <li key={key}>
-                  <Link to={`proverbs/details/${key}`}>
-                    {proverb.combinedProverb}
-                  </Link>
-                </li>
-              );
-            })}
-        </ol>
+        <p>
+          Proverbs
+        </p>
+        <main>
+          <h1>Proverbs List</h1>
+          <ol>
+            {this.props.currentProverbs &&
+              Object.keys(this.props.currentProverbs).map(key => {
+                const proverb = this.props.currentProverbs[key];
+                return (
+                  <li key={key}>
+                    <Link to={`proverbs/details/${key}`}>
+                      {proverb.combinedProverb}
+                    </Link>
+                  </li>
+                );
+              })}
+          </ol>
+        </main>
       </div>
     );
   }

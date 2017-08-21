@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { fetchUser, logoutUser } from "../../../actions/firebase_actions";
@@ -23,15 +24,20 @@ export class SubmitProverb extends React.Component {
   render() {
     return (
       <div>
-        <h1>Submit a Proverb</h1>
-        <p>Add to the repository of proverbs that Doc pulls from.</p>
-        {this.state.proverbSubmitted
-          ? <p>
-              <em>Proverb Submitted!</em>
-            </p>
-          : <div>
-              {" "}<ProverbForm onSubmit={this.submitProverb} />
-            </div>}
+        <p>
+          <Link to="proverbs/">Proverbs</Link> | Submit
+        </p>
+        <main>
+          <h1>Submit a Proverb</h1>
+          <p>Add to the repository of proverbs that Doc pulls from.</p>
+          {this.state.proverbSubmitted
+            ? <p>
+                <em>Proverb Submitted!</em>
+              </p>
+            : <div>
+                {" "}<ProverbForm onSubmit={this.submitProverb} />
+              </div>}
+        </main>
       </div>
     );
   }

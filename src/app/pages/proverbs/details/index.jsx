@@ -21,7 +21,9 @@ export class ProverbDetail extends Component {
     return (
       <div>
         <div>
-          <Link to="/proverbs">Proverbs</Link>
+          <p>
+            <Link to="proverbs/">Proverbs</Link> | Details
+          </p>
         </div>
         {this.props.proverb &&
           <div>
