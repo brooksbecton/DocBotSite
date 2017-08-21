@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
+import { Link } from "react-router";
+import { bindActionCreators } from "redux";
 import { getProverbById } from "./../../../actions/proverbs";
 
 export class ProverbDetail extends Component {
@@ -19,6 +20,9 @@ export class ProverbDetail extends Component {
   render() {
     return (
       <div>
+        <div>
+          <Link to="/proverbs">Proverbs</Link>
+        </div>
         {this.props.proverb &&
           <div>
             <h1>

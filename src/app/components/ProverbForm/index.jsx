@@ -9,8 +9,10 @@ let ProverbForm = props => {
       <div>
         <Label htmlFor="proverbText">Proverb</Label>
         <Field name="proverbText" component="input" type="text" />
+        <button className="btn" type="submit">
+          Submit
+        </button>
       </div>{" "}
-      <button type="submit">Submit</button>
     </form>
   );
 };
