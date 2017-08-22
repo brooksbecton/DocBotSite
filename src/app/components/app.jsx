@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { fetchUser, logoutUser } from "../actions/firebase_actions";
 
 const Nav = styled.nav`margin-bottom: 20px;`;
+const MainContainer = styled.div`min-height: 100vh;`;
 
 class App extends Component {
   constructor(props) {
@@ -107,9 +108,32 @@ class App extends Component {
           </div>
         </Nav>
 
-        <div className="container">
+        <MainContainer className="container">
           {this.props.children}
-        </div>
+        </MainContainer>
+
+        <footer className="footer">
+          <div className="row">
+            <div className="col">
+              <ul>
+                <li>asdf</li>
+                <li>asdf</li>
+                <li>asdf</li>
+                <li>asdf</li>
+                <li>asdf</li>
+              </ul>
+            </div>{" "}
+            <div className="col">
+              <ul>
+                <li>asdf</li>
+                <li>asdf</li>
+                <li>asdf</li>
+                <li>asdf</li>
+                <li>asdf</li>
+              </ul>
+            </div>
+          </div>
+        </footer>
       </div>
     );
   }

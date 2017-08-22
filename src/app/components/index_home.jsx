@@ -31,7 +31,7 @@ export default () =>
           Proverbs are made by picking and choosing proverbs from a repository.
           The list of proverbs is still very small. Please help contribute to
           the repository of proverbs by{" "}
-          <Link to="/proverbs">submitting proverbs</Link>
+          <Link to="/proverbs/submit">submitting proverbs</Link>
         </p>
       </section>
       <section className="col-md-4">
