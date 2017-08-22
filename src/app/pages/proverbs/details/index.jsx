@@ -25,31 +25,35 @@ export class ProverbDetail extends Component {
             <Link to="/proverbs/">Proverbs</Link> | Details
           </p>
         </div>
-        {this.props.proverb &&
-          <div>
-            <h1>
-              {this.props.proverb.combinedProverb}
-            </h1>
-            <h3> Details</h3>
-            <ul>
-              <li>
-                <strong>Date:</strong>
-                {this.props.proverb.date}
-              </li>
-              <li>
-                <strong>Proverb 1:</strong>
-                {this.props.proverb.proverb}
-              </li>
-              <li>
-                <strong>Proverb 2 :</strong>
-                {this.props.proverb.matchingProverb}
-              </li>
-              <li>
-                <strong>Pivot:</strong>
-                {this.props.proverb.pivot}
-              </li>
-            </ul>
-          </div>}
+        {this.props.proverb
+          ? <div>
+              <div className="card">
+              <div className="card-block">
+                  <h1 className="card-title">
+                  {this.props.proverb.combinedProverb}
+                </h1>
+                  <ul className="list-group">
+                  <li className="list-group-item">
+                      <strong>Date:</strong>
+                      {this.props.proverb.date}
+                    </li>
+                  <li className="list-group-item">
+                      <strong>Proverb:</strong>
+                      {this.props.proverb.proverb}
+                    </li>
+                  <li className="list-group-item">
+                      <strong>Proverb:</strong>
+                      {this.props.proverb.matchingProverb}
+                    </li>
+                  <li className="list-group-item">
+                      <strong>Pivot:</strong>
+                      {this.props.proverb.pivot}
+                    </li>
+                </ul>
+                </div>
+            </div>
+            </div>
+          : <p>Loading</p>}
       </div>
     );
   }

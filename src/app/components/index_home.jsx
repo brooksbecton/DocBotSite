@@ -17,7 +17,7 @@ export default () =>
       </Link>
     </div>
 
-    <div>
+    <div className="row">
       <section className="col-md-4">
         <h3>About</h3>
         <p>
