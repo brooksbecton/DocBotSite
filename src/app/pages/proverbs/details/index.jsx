@@ -22,7 +22,7 @@ export class ProverbDetail extends Component {
       <div>
         <div>
           <p>
-            <Link to="proverbs/">Proverbs</Link> | Details
+            <Link to="/proverbs/">Proverbs</Link> | Details
           </p>
         </div>
         {this.props.proverb &&

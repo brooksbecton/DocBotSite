@@ -17,9 +17,7 @@ class ProverbsList extends Component {
   render() {
     return (
       <div>
-        <p>
-          Proverbs
-        </p>
+        <p>Proverbs</p>
         <main>
           <h1>Proverbs List</h1>
           <ol>
@@ -28,7 +26,7 @@ class ProverbsList extends Component {
                 const proverb = this.props.currentProverbs[key];
                 return (
                   <li key={key}>
-                    <Link to={`proverbs/details/${key}`}>
+                    <Link to={`/proverbs/details/${key}`}>
                       {proverb.combinedProverb}
                     </Link>
                   </li>

@@ -25,7 +25,7 @@ export class SubmitProverb extends React.Component {
     return (
       <div>
         <p>
-          <Link to="proverbs/">Proverbs</Link> | Submit
+          <Link to="/proverbs/">Proverbs</Link> | Submit
         </p>
         <main>
           <h1>Submit a Proverb</h1>
