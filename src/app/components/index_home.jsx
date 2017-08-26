@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router";
 
+import TwitterFeed from "./TwitterFeed/index";
+
 export default () =>
   <div>
     <div className="jumbotron">
@@ -36,7 +38,7 @@ export default () =>
       </section>
       <section className="col-md-4">
         <h3>Twiter Feed</h3>
-        <div>Twitter here</div>
+        <TwitterFeed />
       </section>
     </div>
   </div>;

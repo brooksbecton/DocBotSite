@@ -5,6 +5,7 @@ import { bindActionCreators } from "redux";
 import styled from "styled-components";
 import { fetchUser, logoutUser } from "../actions/firebase_actions";
 
+import Footer from "./Footer";
 const Nav = styled.nav`margin-bottom: 20px;`;
 const MainContainer = styled.div`min-height: 100vh;`;
 
@@ -112,28 +113,7 @@ class App extends Component {
           {this.props.children}
         </MainContainer>
 
-        <footer className="footer">
-          <div className="row">
-            <div className="col">
-              <ul>
-                <li>asdf</li>
-                <li>asdf</li>
-                <li>asdf</li>
-                <li>asdf</li>
-                <li>asdf</li>
-              </ul>
-            </div>{" "}
-            <div className="col">
-              <ul>
-                <li>asdf</li>
-                <li>asdf</li>
-                <li>asdf</li>
-                <li>asdf</li>
-                <li>asdf</li>
-              </ul>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </div>
     );
   }
