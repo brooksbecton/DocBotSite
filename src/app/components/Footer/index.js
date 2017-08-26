@@ -8,41 +8,44 @@ const FooterStyle = styled.footer`
   justify-content: space-around;
   padding: 15px;
 `;
+
+const FooterLi = styled.li`list-style-type: none;`;
+
 const Footer = () =>
   <FooterStyle>
     <div>
       <h5>Pages</h5>
       <ul>
-        <li>
+        <FooterLi>
           <Link to="/">Home</Link>
-        </li>
-        <li>
+        </FooterLi>
+        <FooterLi>
           <Link to="/proverbs/">Proverbs</Link>
-        </li>
-        <li>
+        </FooterLi>
+        <FooterLi>
           <Link to="/proverbs/submit">Submit</Link>
-        </li>
+        </FooterLi>
       </ul>
     </div>
     <div>
       <h5>Social</h5>
       <ul>
-        <li>
+        <FooterLi>
           <a href="//twitter.com/docdailyproverb">Twitter</a>
-        </li>
-        <li>
+        </FooterLi>
+        <FooterLi>
           <a href="//github.com/brooksbecton/DocTwitterBot">Github</a>
-        </li>
+        </FooterLi>
       </ul>
     </div>
 
     <div>
       <h5>Contact</h5>
       <ul>
-        <li>
+        <FooterLi>
           Email:{" "}
           <a href="mailto:doctwitterbot@gmail.com">doctwitterbot@gmail.com</a>
-        </li>
+        </FooterLi>
       </ul>
     </div>
   </FooterStyle>;
