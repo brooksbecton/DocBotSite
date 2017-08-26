@@ -2,6 +2,7 @@ import React from "react";
 import { Route, IndexRoute } from "react-router";
 import App from "./components/app";
 
+import About from "./pages/about.js";
 import SubmitProverb from "./pages/proverbs/submit/";
 import ProverbsList from "./pages/proverbs/";
 import ProverbDetail from "./pages/proverbs/details/";
@@ -16,6 +17,7 @@ import requireAuth from "./utils/authenticated";
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={HomeIndex} />
+    <Route path="/about" component={About} />
     <Route path="/login" component={UserLogin} />
     <Route path="/logout" component={UserLogout} />
     <Route path="/register" component={UserRegister} />
