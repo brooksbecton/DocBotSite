@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Route, IndexRoute, Switch } from "react-router-dom";
 import App from "./components/app";
 
-import About from "./pages/about.js";
+import About from "./pages/about";
 import SubmitProverb from "./pages/proverbs/submit/";
 import ProverbsList from "./pages/proverbs/";
 import ProverbDetail from "./pages/proverbs/details/";
