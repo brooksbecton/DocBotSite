@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { browserHistory, Link } from "react-router";
+import { Redirect, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import {
@@ -27,7 +27,7 @@ class UserLogin extends Component {
       if (data.payload.errorCode) {
         this.setState({ message: data.payload.errorMessage });
       } else {
-        browserHistory.push("/profile");
+        this.props.history.push("/");
       }
     });
   }
@@ -37,7 +37,7 @@ class UserLogin extends Component {
       if (data.payload.errorCode) {
         this.setState({ message: data.payload.errorMessage });
       } else {
-        browserHistory.push("/profile");
+        this.props.history.push("/");
       }
     });
   }

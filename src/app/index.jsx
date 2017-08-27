@@ -3,12 +3,11 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import createSagaMiddleware from "redux-saga";
 import { createStore, applyMiddleware } from "redux";
-import { Router, browserHistory } from "react-router";
+import { BrowserRouter } from "react-router-dom";
 import ReduxPromise from "redux-promise";
 
 import reducers from "./reducers";
-import routes from "./routes";
-
+import App from "./components/app";
 import "bootstrap-social";
 import "./bundle.scss";
 
@@ -34,7 +33,9 @@ sagaMiddleware.run(getProverbsWatcher);
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={browserHistory} routes={routes} />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </Provider>,
   document.querySelector(".react-root")
 );

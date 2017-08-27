@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { bindActionCreators } from "redux";
 import { getProverbById } from "./../../../actions/proverbs";
 
@@ -10,7 +10,7 @@ export class ProverbDetail extends Component {
   }
 
   componentWillMount() {
-    this.setState({ id: this.props.params.id });
+    this.setState({ id: this.props.match.params.id });
   }
 
   componentDidMount() {

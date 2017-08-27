@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
-import TwitterFeed from "./TwitterFeed/index";
+import TwitterFeed from "./../../components/TwitterFeed/index";
 
-export default () =>
+const Home = () =>
   <div>
     <div className="jumbotron">
       <h1>Doc Bot Proverbs</h1>
@@ -42,3 +42,4 @@ export default () =>
       </section>
     </div>
   </div>;
+export default Home;
