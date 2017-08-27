@@ -11,8 +11,27 @@ class Header extends Component {
   constructor(props) {
     super(props);
 
+    this.navButton;
+
     this.props.fetchUser();
     this.logOut = this.logOut.bind(this);
+    this.closeNav = this.closeNav.bind(this);
+  }
+
+  componentDidMount() {
+    this.navButton = document.getElementById("mobileNavButton");
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.currentUser !== null) {
+      this.props.fetchUser();
+    }
+  }
+
+  closeNav(isLinkClick) {
+    if (window.innerWidth < 992) {
+      this.navButton.click();
+    }
   }
 
   logOut() {
@@ -20,16 +39,6 @@ class Header extends Component {
       // reload props from reducer
       this.props.fetchUser();
     });
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (this.props.currentUser !== null) {
-      console.log("getting user");
-      console.log(`this.props.currentUser ${this.props.currentUser}`);
-      console.log(`prevProps.currentUser ${prevProps.currentUser}`);
-
-      this.props.fetchUser();
-    }
   }
 
   renderUserMenu(currentUser) {
@@ -49,12 +58,18 @@ class Header extends Component {
           </button>
           <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <li className="dropdown-item">
-              <Link to="/logout" onClick={this.logOut}>
+              <Link
+                onClick={() => this.closeNav()}
+                to="/logout"
+                onClick={this.logOut}
+              >
                 Logout
               </Link>
             </li>
             <li className="dropdown-item">
-              <Link to="/profile">Profile</Link>
+              <Link onClick={() => this.closeNav()} to="/profile">
+                Profile
+              </Link>
             </li>
           </div>
         </div>
@@ -62,12 +77,16 @@ class Header extends Component {
     }
     return [
       <li className="nav-item" key={1}>
-        <Link className="nav-link" to="/login">
+        <Link onClick={() => this.closeNav()} className="nav-link" to="/login">
           Login
         </Link>
       </li>,
       <li className="nav-item" key={2}>
-        <Link className="nav-link" to="/register">
+        <Link
+          onClick={() => this.closeNav()}
+          className="nav-link"
+          to="/register"
+        >
           Register
         </Link>
       </li>
@@ -79,6 +98,7 @@ class Header extends Component {
       <Nav className="navbar navbar-toggleable-md navbar-light bg-faded">
         <button
           className="navbar-toggler navbar-toggler-right"
+          id="mobileNavButton"
           type="button"
           data-toggle="collapse"
           data-target="#navbarSupportedContent"
@@ -95,22 +115,34 @@ class Header extends Component {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <Link className="nav-link" to="/">
+              <Link onClick={() => this.closeNav()} className="nav-link" to="/">
                 {" "}Home
               </Link>
             </li>{" "}
             <li className="nav-item">
-              <Link className="nav-link" to="/about">
+              <Link
+                onClick={() => this.closeNav()}
+                className="nav-link"
+                to="/about"
+              >
                 {" "}About
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/proverbs/">
+              <Link
+                onClick={() => this.closeNav()}
+                className="nav-link"
+                to="/proverbs/"
+              >
                 Proverbs
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/proverbs/submit/">
+              <Link
+                onClick={() => this.closeNav()}
+                className="nav-link"
+                to="/proverbs/submit/"
+              >
                 {" "}Submit
               </Link>
             </li>
