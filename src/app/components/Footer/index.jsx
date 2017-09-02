@@ -4,16 +4,14 @@ import styled from "styled-components";
 
 const FooterStyle = styled.footer`
   background-color: #f7f7f7;
-  display: flex;
-  justify-content: space-around;
   padding: 15px;
 `;
 
 const FooterLi = styled.li`list-style-type: none;`;
 
 const Footer = () =>
-  <FooterStyle>
-    <div>
+  <FooterStyle className="row">
+    <div className="col-md-4">
       <h5>Pages</h5>
       <ul>
         <FooterLi>
@@ -27,7 +25,7 @@ const Footer = () =>
         </FooterLi>
       </ul>
     </div>
-    <div>
+    <div className="col-md-4">
       <h5>Social</h5>
       <ul>
         <FooterLi>
@@ -39,7 +37,7 @@ const Footer = () =>
       </ul>
     </div>
 
-    <div>
+    <div className="col-md-4">
       <h5>Contact</h5>
       <ul>
         <FooterLi>
