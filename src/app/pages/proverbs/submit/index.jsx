@@ -17,7 +17,7 @@ export class SubmitProverb extends React.Component {
   }
 
   submitProverb({ proverbText }) {
-    this.props.saveProverb(proverbText);
+    this.props.saveProverb(proverbText, this.props.currentUser.uid);
     this.setState({ proverbSubmitted: true });
   }
 
@@ -46,6 +46,8 @@ export class SubmitProverb extends React.Component {
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ saveProverb }, dispatch);
 }
-// function mapStateToProps() {}
+function mapStateToProps(state) {
+  return { currentUser: state.currentUser };
+}
 
-export default connect(undefined, mapDispatchToProps)(SubmitProverb);
+export default connect(mapStateToProps, mapDispatchToProps)(SubmitProverb);

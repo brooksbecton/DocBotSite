@@ -12,9 +12,10 @@ import {
   SAVE_PROVERB_SUCCESS
 } from "./../constants/proverbs";
 
-export const saveProverb = proverbText => {
+export const saveProverb = (proverbText, uid) => {
   const request = FirebaseTools.pushDbDate("ProposedProverbs/", {
-    text: proverbText
+    text: proverbText,
+    uid
   });
   return { type: SAVE_PROVERB, request };
 };
