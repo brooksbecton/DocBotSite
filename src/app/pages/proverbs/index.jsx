@@ -41,7 +41,7 @@ class ProverbsList extends Component {
 }
 
 ProverbsList.propTypes = {
-  currentProverbs: PropTypes.object.isRequired
+  currentProverbs: PropTypes.object
 };
 
 function mapDispatchToProps(dispatch) {

@@ -17,7 +17,7 @@ export function* getProverbByIdDriver({ id }) {
 }
 
 export function getLastProverbs(proverbAmount = 10) {
-  return FirebaseTools.getDatabaseReference("doc/proverbs/")
+  return FirebaseTools.getDatabaseReference("doc/")
     .limitToFirst(proverbAmount)
     .once("value");
 }

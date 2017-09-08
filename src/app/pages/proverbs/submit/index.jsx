@@ -30,13 +30,15 @@ export class SubmitProverb extends React.Component {
         <main>
           <h1>Submit a Proverb</h1>
           <p>Add to the repository of proverbs that Doc pulls from.</p>
-          {this.state.proverbSubmitted
-            ? <p>
-                <em>Proverb Submitted!</em>
-              </p>
-            : <div>
-                {" "}<ProverbForm onSubmit={this.submitProverb} />
-              </div>}
+          {this.props.currentUser && this.props.currentUser.uid
+            ? this.state.proverbSubmitted
+              ? <p>
+                  <em>Proverb Submitted!</em>
+                </p>
+              : <div>
+                  {" "}<ProverbForm onSubmit={this.submitProverb} />
+                </div>
+            : <p>You must be signed in to submit</p>}
         </main>
       </div>
     );

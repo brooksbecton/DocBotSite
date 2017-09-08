@@ -1,10 +1,12 @@
+import "babel-polyfill";
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import createSagaMiddleware from "redux-saga";
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
 import { BrowserRouter } from "react-router-dom";
 import ReduxPromise from "redux-promise";
+import "regenerator-runtime/runtime";
 
 import reducers from "./reducers";
 import App from "./components/app";
