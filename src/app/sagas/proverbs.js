@@ -7,7 +7,7 @@ import { GET_PROVERB_BY_ID, GET_PROVERBS } from "./../constants/proverbs";
 import FirebaseTools from "./../utils/firebase";
 
 export function getProverbById(id) {
-  return FirebaseTools.getDatabaseReference(`doc/proverbs/${id}`).once("value");
+  return FirebaseTools.getDatabaseReference(`doc/${id}`).once("value");
 }
 
 export function* getProverbByIdDriver({ id }) {
